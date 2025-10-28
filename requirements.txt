@@ -1,1 +1,23 @@
+- Customer Churn Analysis — Project Description for GitHub :- 
+    Short description A reproducible end-to-end customer churn analysis and modeling project using Python, pandas and scikit-learn.
+    It demonstrates data loading, robust preprocessing, exploratory data analysis (EDA),training and evaluating Random Forest and 
+    Logistic Regression models, hyperparameter tuning, optional imbalance handling (SMOTE) and model explainability (SHAP).
 
+- What’s included :-
+   1. Clean, well-commented Jupyter notebook: archive (1)/Customer Churn Analysis.ipynb
+   2. Data: training and testing CSVs (combined and used in the notebook)
+   3. Modeling examples: Random Forest and Logistic Regression, with scaling and evaluation metrics (accuracy, ROC AUC, confusion matrix)
+   4. Optional steps: GridSearchCV, SMOTE resampling, SHAP explanations, model persistence with joblib
+
+- Key Features :- 
+  1. Robust preprocessing that auto-detects and normalizes a variety of churn column formats
+  2. Numeric conversion and imputation for TotalCharges and other fields
+  3. One-hot encoding for categorical variables and automatic handling of simple Yes/No fields
+  4. Safe train/test splitting with stratification checks
+  5. Model evaluation and visualization (correlation heatmap, boxplots, ROC curves, feature importances)
+  6. Guidance and fallback behavior for optional libraries (imbalanced-learn, shap)
+
+- Quick Start :- 
+  1. Clone the repository.
+  2. Install dependencies (example): pip install -r requirements.txt or pip install pandas numpy scikit-learn matplotlib seaborn joblib (optional: imbalanced-learn shap)
+  3. Open the notebook archive (1)/Customer Churn Analysis.ipynb in VS Code or Jupyter and run the cells.
