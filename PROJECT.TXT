@@ -1,0 +1,66 @@
+Tools: Python, Pandas, Matplotlib, Scikit-learn, Seaborn, SHAP, imbalanced-learn
+
+Project goal:
+Produce a data-driven churn prediction pipeline and visualizations to support retention actions.
+
+Tasks:
+1) Data ingestion
+   - Load training and testing CSVs into pandas DataFrames
+   - Inspect columns, types, missing values and sample rows
+
+2) Data cleaning & preprocessing
+   - Normalize and rename columns as needed
+   - Convert numeric-like strings (e.g., TotalCharges) to numeric
+   - Clean and map the target column (Churn) to binary 0/1
+   - Handle missing values (logical fills, median imputation)
+   - Drop or anonymize identifiers (customerID)
+
+3) Feature engineering
+   - Create tenure buckets, aggregated features (e.g., avg charges)
+   - One-hot encode categorical variables; convert binary flags to 0/1
+   - Scale numeric features when needed for linear models
+
+4) Exploratory Data Analysis (EDA)
+   - Correlation heatmap of numeric features
+   - Churn trends: by Contract, tenure groups, payment method, services
+   - Distribution plots and boxplots for MonthlyCharges, TotalCharges, tenure
+   - Report class balance and missingness patterns
+
+5) Modeling
+   - Define baseline models: Logistic Regression and Random Forest
+   - Train/test split with stratification where possible
+   - Evaluate with accuracy, precision, recall, F1, ROC AUC, confusion matrix
+
+6) Model tuning and validation
+   - Cross-validation and GridSearchCV (StratifiedKFold)
+   - Hyperparameter grids for Random Forest and Logistic Regression
+   - Use pipelines to encapsulate preprocessing and modeling
+
+7) Class imbalance handling
+   - Inspect imbalance severity
+   - Try resampling approaches (SMOTE, random over/under-sampling) or class_weight
+   - Compare performance changes
+
+8) Explainability & feature importance
+   - Extract Random Forest feature importances
+   - Use SHAP to produce summary and dependence plots for top features
+   - Create easy-to-read visualizations for stakeholders
+
+9) Final evaluation and selection
+   - Compare tuned models on holdout test set
+   - Select final model based on ROC AUC and business-relevant metrics (recall for churners)
+
+10) Deliverables & deployment
+   - Notebook with reproducible steps and results (.ipynb)
+   - Saved model artifacts (joblib/pickle) and feature list
+   - Short report or slides summarizing key churn drivers and recommended actions
+   - (Optional) Simple prediction script or REST endpoint for scoring new customers
+
+Success criteria / outcome:
+- Accurate churn prediction model (target: ~80% accuracy, but prioritize recall/AUC as business-appropriate)
+- Clear visualizations of key churn drivers and recommended retention actions
+
+Notes / next steps:
+- Add SHAP explanations for per-customer actionability
+- Automate pipeline (CI) and schedule periodic retraining if new data arrives
+- Consider A/B testing retention tactics for high-risk customers
